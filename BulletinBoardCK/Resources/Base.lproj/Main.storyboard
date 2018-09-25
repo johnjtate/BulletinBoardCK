@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-868" y="344"/>
         </scene>
-        <!--Item-->
+        <!--All Posts-->
         <scene sceneID="32J-x0-W62">
             <objects>
                 <tableViewController id="feV-Ov-qFK" customClass="MessageListTableViewController" customModule="BulletinBoardCK" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,7 +95,7 @@
                             <outlet property="delegate" destination="feV-Ov-qFK" id="KTw-F0-ROG"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Ieo-eh-XX9"/>
+                    <tabBarItem key="tabBarItem" title="All Posts" id="Ieo-eh-XX9"/>
                     <connections>
                         <outlet property="messageTextField" destination="UNY-WG-heg" id="CxI-9H-sSj"/>
                     </connections>
@@ -104,21 +104,21 @@
             </objects>
             <point key="canvasLocation" x="84" y="45"/>
         </scene>
-        <!--Item-->
+        <!--Search Posts-->
         <scene sceneID="3wQ-Tm-FAs">
             <objects>
-                <tableViewController id="q6C-Eq-YqP" sceneMemberID="viewController">
+                <tableViewController id="q6C-Eq-YqP" customClass="ResultsListTableViewController" customModule="BulletinBoardCK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uo9-vz-nSk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="amc-bG-c91">
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="amc-bG-c91">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Knn-ZZ-em6" detailTextLabel="20N-MD-0UK" style="IBUITableViewCellStyleSubtitle" id="k4D-zA-NSE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultsCell" textLabel="Knn-ZZ-em6" detailTextLabel="20N-MD-0UK" style="IBUITableViewCellStyleSubtitle" id="k4D-zA-NSE">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k4D-zA-NSE" id="WlV-tA-Hij">
@@ -148,7 +148,10 @@
                             <outlet property="delegate" destination="q6C-Eq-YqP" id="XAx-c8-YGt"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="i8o-jy-Hha"/>
+                    <tabBarItem key="tabBarItem" title="Search Posts" id="i8o-jy-Hha"/>
+                    <connections>
+                        <outlet property="searchBar" destination="amc-bG-c91" id="EFp-fl-dPE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASL-Bs-WkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

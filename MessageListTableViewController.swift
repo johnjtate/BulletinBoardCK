@@ -20,7 +20,7 @@ class MessageListTableViewController: UITableViewController {
         
         return dateFormatter
     }()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: MessageController.shared.messagesWereUpdatedNotification, object: nil)

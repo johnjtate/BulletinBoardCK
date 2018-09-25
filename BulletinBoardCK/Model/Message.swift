@@ -9,7 +9,7 @@
 import Foundation
 import CloudKit
 
-class Message{
+class Message {
     
     static let TypeKey = "Message"
     static let textKey = "Text"
@@ -42,3 +42,10 @@ class Message{
     }
 }
 
+extension Message: SearchableRecord {
+    // this makes our model object searchable
+    func matches(searchTerm: String) -> Bool {
+        // both the user input and the model object are made lowercased, which allows us to use that Strings conform to Equatable
+        return text.lowercased().contains(searchTerm.lowercased())
+    }
+}
